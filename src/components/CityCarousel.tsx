@@ -79,94 +79,25 @@ const CityCarousel = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const visibleCities = () => {
-    const start = currentIndex * itemsPerPage;
-    return cities.slice(start, start + itemsPerPage);
-  };
-
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-10 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="inline-block px-3 py-1 bg-estate-blue/10 text-estate-blue rounded-full text-sm mb-3">
-            FIND NEIGHBORHOODS IN THESE CITIES
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-estate-dark mb-4">Discover Our Premium Locations</h3>
-          <p className="text-estate-muted max-w-2xl mx-auto">
-            Explore properties in some of the most vibrant and sought-after cities across the country.
-          </p>
-        </div>
-
-        <div className="relative">
-          {/* Carousel Navigation */}
-          <div className="absolute top-1/2 -left-4 transform -translate-y-1/2 z-10">
-            <button 
-              onClick={prevSlide}
-              className="bg-white rounded-full p-3 shadow-lg hover:bg-estate-blue hover:text-white transition-colors"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft size={20} />
-            </button>
-          </div>
-          
-          <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-            <button 
-              onClick={nextSlide}
-              className="bg-white rounded-full p-3 shadow-lg hover:bg-estate-blue hover:text-white transition-colors"
-              aria-label="Next slide"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
-          
-          {/* Carousel */}
-          <div 
-            ref={carouselRef}
-            className="overflow-hidden"
-          >
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {cities.map((city) => (
-                <div 
-                  key={city.id} 
-                  className="min-w-[33.333%] px-4 flex-shrink-0 w-full sm:w-1/2 lg:w-1/3"
-                >
-                  <div className="city-card rounded-xl overflow-hidden shadow-lg h-[300px] relative group cursor-pointer">
-                    <img 
-                      src={city.image} 
-                      alt={city.name}
-                      className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-estate-dark to-transparent opacity-70 city-overlay transition-opacity duration-300"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="text-2xl font-bold mb-1">{city.name}</h3>
-                      <p className="text-white/80">{city.properties} Properties</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Dots indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: totalPages }).map((_, index) => (
-              <button
-                key={index}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === index ? 'w-8 bg-estate-blue' : 'w-2 bg-gray-300'
-                }`}
-                onClick={() => {
-                  setIsAnimating(true);
-                  setCurrentIndex(index);
-                  setTimeout(() => setIsAnimating(false), 500);
-                }}
-                aria-label={`Go to slide ${index + 1}`}
+        {/* Grid layout for city cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cities.map((city) => (
+            <div key={city.id} className="city-card rounded-xl overflow-hidden shadow-lg h-[220px] relative group cursor-pointer">
+              <img 
+                src={city.image} 
+                alt={city.name}
+                className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
               />
-            ))}
-          </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-estate-dark to-transparent opacity-70 city-overlay transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-1">{city.name}</h3>
+                <p className="text-white/80">{city.properties} Properties</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
