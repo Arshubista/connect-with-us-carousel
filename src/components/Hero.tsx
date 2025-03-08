@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Search } from 'lucide-react';
+import { Search, MapPin, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -21,21 +21,58 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center">
         <div className="container mx-auto px-4 flex flex-col items-center">
-          {/* Search Bar */}
-          <div className="bg-white rounded-lg p-1 flex items-center shadow-lg w-full max-w-3xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <div className="flex-1 relative">
-              <Search size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-estate-dark/50" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search for properties, neighborhoods, or cities..."
-                className="w-full py-3 pl-10 pr-4 bg-transparent outline-none text-estate-dark"
-              />
+          {/* Search Bar - Updated to match image */}
+          <div className="bg-white rounded-full shadow-lg w-full max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="flex flex-wrap md:flex-nowrap items-center">
+              {/* Location Input */}
+              <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center min-w-[250px]">
+                <MapPin size={20} className="text-gray-400 mr-2" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Where are you looking for?"
+                  className="w-full outline-none text-estate-dark"
+                />
+              </div>
+              
+              {/* Property Type */}
+              <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[200px]">
+                <div className="text-estate-dark">Property Type</div>
+                <ChevronDown size={18} className="text-gray-400" />
+              </div>
+              
+              {/* Bedrooms */}
+              <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[150px]">
+                <div className="text-estate-dark">Bedrooms</div>
+                <ChevronDown size={18} className="text-gray-400" />
+              </div>
+              
+              {/* Bathrooms */}
+              <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[150px]">
+                <div className="text-estate-dark">Bathrooms</div>
+                <ChevronDown size={18} className="text-gray-400" />
+              </div>
+              
+              {/* Price Range */}
+              <div className="flex items-center">
+                <div className="px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[80px]">
+                  <div className="text-estate-dark">$</div>
+                  <ChevronDown size={18} className="text-gray-400 ml-2" />
+                </div>
+                <div className="px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[120px]">
+                  <div className="text-estate-dark">Price</div>
+                  <ChevronDown size={18} className="text-gray-400 ml-2" />
+                </div>
+              </div>
+              
+              {/* Search Button */}
+              <div className="p-2 md:p-0">
+                <button className="bg-estate-dark hover:bg-estate-dark/90 text-white p-4 rounded-full transition-colors duration-300">
+                  <Search size={24} />
+                </button>
+              </div>
             </div>
-            <button className="bg-estate-red hover:bg-estate-red/90 text-white px-6 py-3 rounded-md transition-colors duration-300 font-medium whitespace-nowrap">
-              Find Properties
-            </button>
           </div>
           
           <div className="animate-fade-up text-center mt-8">
