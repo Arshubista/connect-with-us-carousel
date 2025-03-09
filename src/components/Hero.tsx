@@ -38,31 +38,26 @@ const Hero = () => {
               
               {/* Property Type */}
               <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[200px]">
-                <div className="text-estate-dark">Property Type</div>
-                <ChevronDown size={18} className="text-gray-400" />
+                <PropertyTypeDropdown />
               </div>
               
               {/* Bedrooms */}
               <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[150px]">
-                <div className="text-estate-dark">Bedrooms</div>
-                <ChevronDown size={18} className="text-gray-400" />
+                <BedroomsDropdown />
               </div>
               
               {/* Bathrooms */}
               <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[150px]">
-                <div className="text-estate-dark">Bathrooms</div>
-                <ChevronDown size={18} className="text-gray-400" />
+                <BathroomsDropdown />
               </div>
               
               {/* Price Range */}
               <div className="flex items-center">
                 <div className="px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[80px]">
-                  <div className="text-estate-dark">$</div>
-                  <ChevronDown size={18} className="text-gray-400 ml-2" />
+                  <CurrencyDropdown />
                 </div>
                 <div className="px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[120px]">
-                  <div className="text-estate-dark">Price</div>
-                  <ChevronDown size={18} className="text-gray-400 ml-2" />
+                  <PriceDropdown />
                 </div>
               </div>
               
@@ -85,5 +80,247 @@ const Hero = () => {
     </section>
   );
 };
+
+const PropertyTypeDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedType, setSelectedType] = useState("Property Type");
+
+  const propertyTypes = [
+    "Office",
+    "Loft",
+    "Land",
+    "Residential",
+    "Rental",
+    "Commercial",
+    "Vacant Land",
+    "Income",
+    "Waterfront",
+    "Villa",
+  ];
+
+  return (
+    <div className="relative flex-1 px-6 py-4 border-gray-200 rounded-md min-w-[200px]">
+      {/* Dropdown Button */}
+      <div
+        className="flex items-center justify-between cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="text-estate-dark">{selectedType}</span>
+        <ChevronDown size={18} className="text-gray-400" />
+      </div>
+
+      {/* Dropdown Menu */}
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-md shadow-md mt-2 z-10 max-h-48 overflow-y-auto">
+          {propertyTypes.map((type, index) => (
+            <div
+              key={index}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => {
+                setSelectedType(type);
+                setIsOpen(false);
+              }}
+            >
+              {type}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const BedroomsDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedBedrooms, setSelectedBedrooms] = useState("Bedrooms");
+
+  const bedroomOptions = [
+    "1+",
+    "2+",
+    "3+",
+    "4+",
+    "5+",
+    "6+",
+    "7+",
+    "8+",
+    "9+",
+    "10+",
+  ];
+
+  return (
+    <div className="relative flex-1 px-6 py-4 border-gray-200 rounded-md min-w-[150px]">
+      {/* Dropdown Button */}
+      <div
+        className="flex items-center justify-between cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="text-estate-dark">{selectedBedrooms}</span>
+        <ChevronDown size={18} className="text-gray-400" />
+      </div>
+
+      {/* Dropdown Menu */}
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-md shadow-md mt-2 z-10 max-h-48 overflow-y-auto">
+          {bedroomOptions.map((option, index) => (
+            <div
+              key={index}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => {
+                setSelectedBedrooms(option);
+                setIsOpen(false);
+              }}
+            >
+              {option}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const BathroomsDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedBathrooms, setSelectedBathrooms] = useState("Bathrooms");
+
+  const bathroomOptions = [
+    "1+",
+    "2+",
+    "3+",
+    "4+",
+    "5+",
+    "6+",
+    "7+",
+    "8+",
+    "9+",
+    "10+",
+  ];
+
+  return (
+    <div className="relative flex-1 px-6 py-4 border-gray-200 rounded-md min-w-[150px]">
+      {/* Dropdown Button */}
+      <div
+        className="flex items-center justify-between cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="text-estate-dark">{selectedBathrooms}</span>
+        <ChevronDown size={18} className="text-gray-400" />
+      </div>
+
+      {/* Dropdown Menu */}
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-white border-gray-150 rounded-md shadow-md mt-2 z-10 max-h-48 overflow-y-auto">
+          {bathroomOptions.map((option, index) => (
+            <div
+              key={index}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => {
+                setSelectedBathrooms(option);
+                setIsOpen(false);
+              }}
+            >
+              {option}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const CurrencyDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedCurrency, setSelectedCurrency] = useState("$");
+
+  const currencyOptions = [
+    { symbol: "$", label: "USD" },
+    { symbol: "£", label: "GBP" },
+    { symbol: "€", label: "EUR" },
+  ];
+
+  return (
+    <div className="relative flex-1 px-6 py-4 gray-200 rounded-md min-w-[200
+    px]">
+      {/* Dropdown Button */}
+      <div
+        className="flex items-center justify-between cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="text-estate-dark">{selectedCurrency}</span>
+        <ChevronDown size={18} className="text-gray-400 ml-2" />
+      </div>
+
+      {/* Dropdown Menu */}
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-md shadow-md mt-2 z-10">
+          {currencyOptions.map((option, index) => (
+            <div
+              key={index}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
+              onClick={() => {
+                setSelectedCurrency(option.symbol);
+                setIsOpen(false);
+              }}
+            >
+              {option.symbol} <span className="ml-2 text-gray-500">{option.label}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+
+const PriceDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedPrice, setSelectedPrice] = useState("Price");
+
+  const priceOptions = [
+    "10,000+",
+    "20,000+",
+    "30,000+",
+    "40,000+",
+    "50,000+",
+    "60,000+",
+    "70,000+",
+    "80,000+",
+    "90,000+",
+    "100,000+",
+  ];
+
+  return (
+    <div className="relative flex-1 px-6 py-4 border-gray-200 rounded-md min-w-[15
+    0px]">
+      {/* Dropdown Button */}
+      <div
+        className="flex items-center justify-between cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="text-estate-dark">{selectedPrice}</span>
+        <ChevronDown size={18} className="text-gray-400 ml-2" />
+      </div>
+
+      {/* Dropdown Menu */}
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-md shadow-md mt-2 z-10 max-h-48 overflow-y-auto">
+          {priceOptions.map((option, index) => (
+            <div
+              key={index}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => {
+                setSelectedPrice(option);
+                setIsOpen(false);
+              }}
+            >
+              {option}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 
 export default Hero;
