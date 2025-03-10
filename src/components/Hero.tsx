@@ -3,13 +3,13 @@ import { Search, MapPin, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-  "https://source.unsplash.com/random/1920x1080/?city,night",
-  "https://source.unsplash.com/random/1920x1080/?architecture",
-  "https://source.unsplash.com/random/1920x1080/?buildings",
-  "https://source.unsplash.com/random/1920x1080/?real-estate",
-  "https://source.unsplash.com/random/1920x1080/?skyscraper",
-  "https://source.unsplash.com/random/1920x1080/?urban",
-  "https://source.unsplash.com/random/1920x1080/?metropolis"
+  "https://unsplash.com/photos/aerial-photography-of-rural-r3WAWU5Fi5Q",
+  "https://unsplash.com/photos/man-in-black-shirt-sitting-on-chair-near-white-wooden-house-during-daytime-W8z6aiwfi1E",
+  "https://unsplash.com/photos/white-concrete-building-under-blue-sky-during-daytime-mR1CIDduGLc",
+  "https://unsplash.com/photos/white-bed-linen-on-bed-A0aoiM8doMk",
+  "https://unsplash.com/photos/white-and-brown-concrete-building-b_79nOqf95I",
+  "https://source.unsplash.com/random/1920https://unsplash.com/photos/keys-on-hand-jJnZg7vBfMsx1080/?urban",
+  "https://shttps://unsplash.com/photos/low-angle-photo-of-city-high-rise-buildings-during-daytime-PhYq704ffdAource.unsplash.com/random/1920x1080/?metropolis"
 ];
 
 const Hero = () => {
