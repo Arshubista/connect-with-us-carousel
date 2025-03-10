@@ -7,6 +7,9 @@ const images = [
   "https://source.unsplash.com/random/1920x1080/?architecture",
   "https://source.unsplash.com/random/1920x1080/?buildings",
   "https://source.unsplash.com/random/1920x1080/?real-estate",
+  "https://source.unsplash.com/random/1920x1080/?skyscraper",
+  "https://source.unsplash.com/random/1920x1080/?urban",
+  "https://source.unsplash.com/random/1920x1080/?metropolis"
 ];
 
 const Hero = () => {
@@ -14,7 +17,7 @@ const Hero = () => {
   const [activeImage, setActiveImage] = useState(0);
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const properties = ["Apartment", "House", "Office", "Villa", "Condo", "Townhouse"];
+  const properties = ["Apartment", "House", "Office", "Villa", "Condo", "Townhouse", "Studio", "Penthouse"];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,11 +46,10 @@ const Hero = () => {
           key={activeImage}
           src={images[activeImage]}
           alt="Background"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
         />
       </AnimatePresence>
       <div className="absolute inset-0 bg-black/50" />
