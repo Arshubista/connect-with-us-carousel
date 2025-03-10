@@ -16,7 +16,7 @@ const Footer = () => {
                 alt="Trigo Logo" 
                 className="h-10 w-auto" 
               />
-            </Link>
+            </Link>f
             <p className="text-white/70 leading-relaxed">
               We help you find the perfect property in prime locations across major cities. Your journey to the perfect home starts with us.
             </p>
