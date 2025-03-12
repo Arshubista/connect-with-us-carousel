@@ -41,21 +41,21 @@ const Dropdown = ({
   }, [dropdownRef, openState, setOpenState]);
 
   return (
-    <div ref={dropdownRef} className="relative flex-1 px-6 py-4 border-gray-200 rounded-md" style={{ minWidth }}>
+    <div ref={dropdownRef} className="relative flex-1 w-full md:w-auto" style={{ minWidth }}>
       <div
-        className="flex items-center justify-between cursor-pointer"
+        className="flex items-center justify-between cursor-pointer bg-white border border-gray-200 rounded-lg p-3 hover:border-gray-300"
         onClick={() => setOpenState(!openState)}
       >
-        <span className="text-estate-dark">{selected}</span>
-        <ChevronDown size={18} className="text-gray-400 ml-2" />
+        <span className="text-sm text-gray-700">{selected}</span>
+        <ChevronDown size={16} className="text-gray-500" />
       </div>
 
       {openState && (
-        <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-md shadow-md mt-2 z-10 max-h-48 overflow-y-auto">
+        <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-lg shadow-lg mt-2 z-10 max-h-48 overflow-y-auto">
           {options.map((option, index) => (
             <div
               key={index}
-              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
               onClick={() => handleSelect(option)}
             >
               {renderOption(option)}
@@ -73,8 +73,8 @@ const PROPERTY_TYPES = [
   "Commercial", "Vacant Land", "Income", "Waterfront", "Villa"
 ];
 
-const BEDROOM_OPTIONS = ["1+", "2+", "3+", "4+", "5+", "6+", "7+", "8+", "9+", "10+"];
-const BATHROOM_OPTIONS = ["1+", "2+", "3+", "4+", "5+", "6+", "7+", "8+", "9+", "10+"];
+const BEDROOM_OPTIONS = ["0", "1+", "2+", "3+", "4+", "5+", "6+", "7+", "8+", "9+","10+"];
+const BATHROOM_OPTIONS = ["0", "1+", "2+", "3+", "4+", "5+", "6+", "7+", "8+", "9+", "10+"];
 
 const CURRENCY_OPTIONS = [
   { symbol: "$", label: "USD" },
@@ -132,28 +132,28 @@ const Hero = () => {
            onClick={() => setActiveDropdown(null)}>
         <div className="container mx-auto px-4 flex flex-col items-center">
           {/* Search Bar */}
-          <div className="bg-white rounded-full shadow-lg w-full max-w-5xl mx-auto" 
+          <div className="bg-white rounded-lg md:rounded-lg shadow-lg w-lg max-w-7xl mx-auto p-1" 
                onClick={(e) => e.stopPropagation()}>
-            <div className="flex flex-wrap md:flex-nowrap items-center">
+            <div className="flex flex-col md:flex-row items-center gap-1">
               {/* Location Input */}
-              <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center min-w-[150px]">
-                <MapPin size={20} className="text-gray-400 mr-2" />
+              <div className="flex-1 w-full md:w-auto flex items-center bg-gray-50 border border-gray-200 rounded-lg p-3">
+                <MapPin size={20} className="text-gray-500 mr-" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Where are you looking for?"
-                  className="w-full outline-none text-estate-dark"
+                  placeholder="Where are you looking"
+                  className="w- bg-transparent outline-none text-sm text-gray-700"
                   onClick={() => setActiveDropdown(null)}
                 />
               </div>
               
               {/* Property Type */}
-              <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[200px]">
+              <div className="flex-1 w-full md:w-auto">
                 <Dropdown 
                   label="Property Type" 
                   options={PROPERTY_TYPES}
-                  minWidth="200px"
+                  minWidth="150px"
                   onSelect={(val) => updateFilter('propertyType', val)}
                   isOpenOverride={activeDropdown === 'propertyType'}
                   onOpenChange={() => handleDropdownToggle('propertyType')}
@@ -161,10 +161,11 @@ const Hero = () => {
               </div>
               
               {/* Bedrooms */}
-              <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[150px]">
+              <div className="flex-1 w-full md:w-auto">
                 <Dropdown 
                   label="Bedrooms" 
                   options={BEDROOM_OPTIONS}
+                  minWidth="120px"
                   onSelect={(val) => updateFilter('bedrooms', val)}
                   isOpenOverride={activeDropdown === 'bedrooms'}
                   onOpenChange={() => handleDropdownToggle('bedrooms')}
@@ -172,10 +173,11 @@ const Hero = () => {
               </div>
               
               {/* Bathrooms */}
-              <div className="flex-1 px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[150px]">
+              <div className="flex-1 w-full md:w-auto">
                 <Dropdown 
                   label="Bathrooms" 
                   options={BATHROOM_OPTIONS}
+                  minWidth="120px"
                   onSelect={(val) => updateFilter('bathrooms', val)}
                   isOpenOverride={activeDropdown === 'bathrooms'}
                   onOpenChange={() => handleDropdownToggle('bathrooms')}
@@ -183,50 +185,41 @@ const Hero = () => {
               </div>
               
               {/* Price Range */}
-              <div className="flex items-center">
-                <div className="px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[80px]">
-                  <Dropdown 
-                    label="$" 
-                    options={CURRENCY_OPTIONS}
-                    minWidth="80px"
-                    renderOption={(option) => (
-                      <div className="flex items-center">
-                        {option.symbol} <span className="ml-2 text-gray-500">{option.label}</span>
-                      </div>
-                    )}
-                    onSelect={(val) => updateFilter('currency', val.symbol)}
-                    isOpenOverride={activeDropdown === 'currency'}
-                    onOpenChange={() => handleDropdownToggle('currency')}
-                  />
-                </div>
-                <div className="px-6 py-4 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-between min-w-[120px]">
-                  <Dropdown 
-                    label="Price" 
-                    options={PRICE_OPTIONS}
-                    minWidth="120px"
-                    onSelect={(val) => updateFilter('price', val)}
-                    isOpenOverride={activeDropdown === 'price'}
-                    onOpenChange={() => handleDropdownToggle('price')}
-                  />
-                </div>
+              <div className="flex-1 w-full md:w-auto flex items-center gap-1">
+                <Dropdown 
+                  label="$" 
+                  options={CURRENCY_OPTIONS}
+                  minWidth="80px"
+                  renderOption={(option) => (
+                    <div className="flex items-center">
+                      {option.symbol} <span className="ml-2 text-gray-500">{option.label}</span>
+                    </div>
+                  )}
+                  onSelect={(val) => updateFilter('currency', val.symbol)}
+                  isOpenOverride={activeDropdown === 'currency'}
+                  onOpenChange={() => handleDropdownToggle('currency')}
+                />
+                <Dropdown 
+                  label="Price" 
+                  options={PRICE_OPTIONS}
+                  minWidth="120px"
+                  onSelect={(val) => updateFilter('price', val)}
+                  isOpenOverride={activeDropdown === 'price'}
+                  onOpenChange={() => handleDropdownToggle('price')}
+                />
               </div>
               
               {/* Search Button */}
-              <div className="p-2 md:p-0">
+              <div className="w-full md:w-auto">
                 <button 
-                  className="bg-estate-dark hover:bg-estate-dark/90 text-white p-4 rounded-full transition-colors duration-300"
+                  className="w-full bg-blue-500 hover:bg-blue-700 text-white p-2 rounded-full flex items-center justify-center transition-colors duration-300"
                   onClick={handleSearch}
                 >
-                  <Search size={24} />
+                  <Search size={25} className="mr-2" />
+                  <span className="text-sm"></span>
                 </button>
               </div>
             </div>
-          </div>
-          
-          <div className="text-center mt-8">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 uppercase">
-              Find Neighborhoods in These Cities
-            </h1>
           </div>
         </div>
       </div>
