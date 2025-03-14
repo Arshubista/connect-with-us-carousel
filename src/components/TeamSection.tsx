@@ -59,23 +59,18 @@ const TeamSection = () => {
   }, []); // Empty dependency array ensures this effect runs only once
 
   return (
-    <section 
-      className="py-20 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2674&q=80')`,
-      }}
-    >
+    <section className="py-20 bg-white">
       <div 
         ref={sectionRef}
         className={`container mx-auto px-4 fade-up ${isVisible ? 'in-view' : ''}`}
       >
         <div className="text-center mb-12">
           {/* Updated "OUR TEAM" Text */}
-          <h2 className="inline-block px-3 py-1 bg-estate-blue/10 text-estate-blue rounded-full text-lg font-bold mb-3">
-            OUR TEAM
+          <h2 className="inline-block px-3 py-1 bg-estate-blue/10 text-estate-blue rounded-full text-lg text-2xl md:text-2xl font-bold mb-3">
+            OWNER
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Meet Our Leadership</h3>
-          <p className="text-white max-w-2xl mx-auto">
+          <h3 className="text-5xl md:text-4xl font-bold text-estate-dark mb-4">Meet Our Leadership</h3>
+          <p className="text-estate-muted max-w-2xl mx-auto">
             Guided by expertise and passion, our leadership team is committed to finding you the perfect property.
           </p>
         </div>
@@ -123,7 +118,7 @@ const TeamSection = () => {
         <div className="mt-12 text-center">
           <Link 
             to="/team" 
-            className="inline-flex items-center text-white hover:text-estate-darkblue font-medium transition-colors"
+            className="inline-flex items-center text-estate-blue hover:text-estate-darkblue font-medium transition-colors"
           >
             Meet the entire team <ChevronRight size={16} className="ml-1" />
           </Link>
