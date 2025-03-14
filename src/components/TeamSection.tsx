@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
@@ -36,6 +35,9 @@ const TeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Store the current value of sectionRef in a variable
+    const currentSectionRef = sectionRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -45,59 +47,83 @@ const TeamSection = () => {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
       }
     };
-  }, []);
+  }, []); // Empty dependency array ensures this effect runs only once
 
   return (
-    <section className="py-20 bg-white">
+    <section 
+      className="py-20 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2674&q=80')`,
+      }}
+    >
       <div 
         ref={sectionRef}
         className={`container mx-auto px-4 fade-up ${isVisible ? 'in-view' : ''}`}
       >
         <div className="text-center mb-12">
-          <h2 className="inline-block px-3 py-1 bg-estate-blue/10 text-estate-blue rounded-full text-sm mb-3">
+          {/* Updated "OUR TEAM" Text */}
+          <h2 className="inline-block px-3 py-1 bg-estate-blue/10 text-estate-blue rounded-full text-lg font-bold mb-3">
             OUR TEAM
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-estate-dark mb-4">Meet Our Leadership</h3>
-          <p className="text-estate-muted max-w-2xl mx-auto">
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Meet Our Leadership</h3>
+          <p className="text-white max-w-2xl mx-auto">
             Guided by expertise and passion, our leadership team is committed to finding you the perfect property.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Grid View for Team Members */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <div 
               key={member.id} 
-              className={`bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl fade-up`}
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl"
             >
-              <div className="relative h-80 overflow-hidden">
+              {/* Image Container */}
+              <div className="relative aspect-square overflow-hidden">
                 <img 
                   src={member.image} 
                   alt={member.name}
                   className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+                  onError={(e) => {
+                    // Fallback image if the original fails to load
+                    if (e.currentTarget.src !== 'https://via.placeholder.com/300') {
+                      e.currentTarget.src = 'https://via.placeholder.com/300';
+                    }
+                  }}
+                  loading="lazy"
+                  aria-label={`Image of ${member.name}`}
                 />
               </div>
-              <div className="p-6">
+
+              {/* Member Details */}
+              <div className="p-6 text-center">
                 <h4 className="text-xl font-bold text-estate-dark">{member.name}</h4>
-                <p className="text-estate-muted">{member.role}</p>
+                <p className="text-estate-muted mb-4">{member.role}</p>
+                <Link 
+                  to="/team" 
+                  className="inline-flex items-center justify-center px-4 py-2 bg-estate-blue text-white rounded-full hover:bg-estate-darkblue transition-colors"
+                >
+                  Meet the Team <ChevronRight size={16} className="ml-1" />
+                </Link>
               </div>
             </div>
           ))}
         </div>
-        
+
+        {/* Meet the Entire Team Link */}
         <div className="mt-12 text-center">
           <Link 
             to="/team" 
-            className="inline-flex items-center text-estate-blue hover:text-estate-darkblue font-medium transition-colors"
+            className="inline-flex items-center text-white hover:text-estate-darkblue font-medium transition-colors"
           >
             Meet the entire team <ChevronRight size={16} className="ml-1" />
           </Link>
