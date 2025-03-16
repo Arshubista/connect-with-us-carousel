@@ -116,40 +116,41 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-[70vh] w-full overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2244&q=80" 
-          alt="Aerial city view"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-      </div>
+    <section 
+  className="relative h-[70vh] w-full overflow-hidden bg-cover bg-center bg-fixed"
+  style={{
+    backgroundImage: `url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2244&q=80')`,
+  }}
+>
+
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/50" />
+  
       
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center" 
            onClick={() => setActiveDropdown(null)}>
         <div className="container mx-auto px-4 flex flex-col items-center">
           {/* Search Bar */}
-          <div className="bg-white rounded-lg md:rounded-lg shadow-lg w-lg max-w-7xl mx-auto p-1" 
+          <div className="bg-white rounded-lg lg:rounded-full shadow-lg w-full max-w-5xl mx-auto p-4" 
                onClick={(e) => e.stopPropagation()}>
-            <div className="flex flex-col md:flex-row items-center gap-1">
+            <div className="flex flex-col lg:flex-row items-center gap-4">
               {/* Location Input */}
-              <div className="flex-1 w-full md:w-auto flex items-center bg-gray-50 border border-gray-200 rounded-lg p-3">
-                <MapPin size={20} className="text-gray-500 mr-" />
+              <div className="flex-1 w-full lg:w-auto flex items-center bg-gray-50 border border-gray-200 rounded-lg p-3">
+                <MapPin size={20} className="text-gray-500 mr-2" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Where are you looking"
-                  className="w- bg-transparent outline-none text-sm text-gray-700"
+                  placeholder="Where are you looking for?"
+                  className="w-full bg-transparent outline-none text-sm text-gray-700"
                   onClick={() => setActiveDropdown(null)}
                 />
               </div>
               
               {/* Property Type */}
-              <div className="flex-1 w-full md:w-auto">
+              <div className="flex-1 w-full lg:w-auto">
                 <Dropdown 
                   label="Property Type" 
                   options={PROPERTY_TYPES}
@@ -161,7 +162,7 @@ const Hero = () => {
               </div>
               
               {/* Bedrooms */}
-              <div className="flex-1 w-full md:w-auto">
+              <div className="flex-1 w-full lg:w-auto">
                 <Dropdown 
                   label="Bedrooms" 
                   options={BEDROOM_OPTIONS}
@@ -173,7 +174,7 @@ const Hero = () => {
               </div>
               
               {/* Bathrooms */}
-              <div className="flex-1 w-full md:w-auto">
+              <div className="flex-1 w-full lg:w-auto">
                 <Dropdown 
                   label="Bathrooms" 
                   options={BATHROOM_OPTIONS}
@@ -185,7 +186,7 @@ const Hero = () => {
               </div>
               
               {/* Price Range */}
-              <div className="flex-1 w-full md:w-auto flex items-center gap-1">
+              <div className="flex-1 w-full lg:w-auto flex items-center gap-2">
                 <Dropdown 
                   label="$" 
                   options={CURRENCY_OPTIONS}
@@ -212,11 +213,11 @@ const Hero = () => {
               {/* Search Button */}
               <div className="w-full md:w-auto">
                 <button 
-                  className="w-full bg-blue-500 hover:bg-blue-700 text-white p-2 rounded-full flex items-center justify-center transition-colors duration-300"
+                  className="w-full bg-black hover:bg-blue-700 text-white p-3 rounded-lg flex items-center justify-center transition-colors duration-300"
                   onClick={handleSearch}
                 >
-                  <Search size={25} className="mr-2" />
-                  <span className="text-sm"></span>
+                  <Search size={20} className="mr-2" />
+                  <span className="text-sm">Search</span>
                 </button>
               </div>
             </div>

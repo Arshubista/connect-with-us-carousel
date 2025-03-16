@@ -37,12 +37,12 @@ const CityCarousel = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(cities.length / itemsPerPage));
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [itemsPerPage]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(cities.length / itemsPerPage));
+  //   }, 3000);
+  //   return () => clearInterval(interval);
+  // }, [itemsPerPage]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(cities.length / itemsPerPage));

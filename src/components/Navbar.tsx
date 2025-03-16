@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -38,7 +37,7 @@ const Navbar = () => {
           </Link>
           
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <Link 
               to="/" 
               className="text-estate-dark font-medium hover:text-estate-blue transition-colors"

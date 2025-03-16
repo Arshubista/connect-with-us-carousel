@@ -16,23 +16,32 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+      
       <Hero />
       
       {/* Featured Cities */}
       <CityCarousel />
       
       {/* Lead Form Section */}
-      <section className="py-20 bg-white">
+      <section 
+  className="relative h-auto w-full overflow-hidden bg-cover bg-center bg-fixed py-20"
+  style={{
+    backgroundImage: `url('https://wpl28.realtyna.net/divi/wp-content/uploads/sites/9/2018/06/message-bg.jpg')`,
+  }}
+>
+  {/* Overlay */}
+  {/* <div className="absolute inset-0 bg-black/50" /> */}
+
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="order-2 lg:order-1">
-              <h2 className="inline-block px-3 py-1 bg-estate-blue/10 text-estate-blue rounded-full text-sm mb-3">
+              <h2 className="inline-block px-3 py-1 bg-estate-blue/30 text-estate-blue rounded-full text-sm mb-3">
                 GET IN TOUCH
               </h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-estate-dark mb-4">
+              <h3 className="text-3xl md:text-4xl font-bold text-slate-500 mb-4">
                 Find Your Dream Home Today
               </h3>
-              <p className="text-estate-muted mb-6">
+              <p className="text-white mb-6">
                 Whether you're looking for a new home, investment property, or commercial space, our expert team is ready to help you every step of the way.
               </p>
               <ul className="space-y-4">
@@ -43,8 +52,8 @@ const Index = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-medium text-estate-dark">Expert Guidance</h4>
-                    <p className="text-estate-muted">Our team of experienced agents knows the market inside and out.</p>
+                    <h4 className="font-medium text-slate-500">Expert Guidance</h4>
+                    <p className="text-white">Our team of experienced agents knows the market inside and out.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -54,8 +63,8 @@ const Index = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-medium text-estate-dark">Premium Locations</h4>
-                    <p className="text-estate-muted">Access to exclusive properties in the most desirable neighborhoods.</p>
+                    <h4 className="font-medium text-slate-500">Premium Locations</h4>
+                    <p className="text-white">Access to exclusive properties in the most desirable neighborhoods.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -65,8 +74,8 @@ const Index = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-medium text-estate-dark">Personalized Experience</h4>
-                    <p className="text-estate-muted">Tailored services to meet your specific real estate needs and preferences.</p>
+                    <h4 className="font-medium text-slate-500">Personalized Experience</h4>
+                    <p className="text-white">Tailored services to meet your specific real estate needs and preferences.</p>
                   </div>
                 </li>
               </ul>
