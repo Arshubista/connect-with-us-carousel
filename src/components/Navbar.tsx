@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X, Phone } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({isHomePage=false}:{isHomePage?:boolean}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const nonScrolledColor = isHomePage ? "text-white" : "text-black";
+  const scrolledColor = "text-black"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,31 +43,31 @@ const Navbar = () => {
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <Link 
               to="/" 
-              className="text-estate-dark font-medium hover:text-estate-blue transition-colors"
+              className={`${isScrolled ? scrolledColor :nonScrolledColor} first-letter:font-medium hover:text-estate-blue transition-colors`}
             >
               Home
             </Link>
             <Link 
               to="/team" 
-              className="text-estate-dark font-medium hover:text-estate-blue transition-colors"
+              className={`${isScrolled ? scrolledColor :nonScrolledColor} first-letter:font-medium hover:text-estate-blue transition-colors`}
             >
               Team
             </Link>
             <Link 
-              to="/" 
-              className="text-estate-dark font-medium hover:text-estate-blue transition-colors"
+              to="/property" 
+              className={`${isScrolled ? scrolledColor :nonScrolledColor} first-letter:font-medium hover:text-estate-blue transition-colors`}
             >
               Properties
             </Link>
             <Link 
               to="/" 
-              className="text-estate-dark font-medium hover:text-estate-blue transition-colors"
+              className={`${isScrolled ? scrolledColor :nonScrolledColor} first-letter:font-medium hover:text-estate-blue transition-colors`}
             >
               About
             </Link>
             <Link 
               to="/" 
-              className="text-estate-dark font-medium hover:text-estate-blue transition-colors"
+              className={`${isScrolled ? scrolledColor :nonScrolledColor} first-letter:font-medium hover:text-estate-blue transition-colors`}
             >
               Contact
             </Link>
@@ -73,11 +76,11 @@ const Navbar = () => {
           {/* Contact Button */}
           <div className="hidden md:flex items-center">
             <a 
-              href="tel:+11234567890" 
+              href="tel:+14084497257" 
               className="flex items-center bg-estate-blue text-white px-4 py-2 rounded hover:bg-estate-darkblue transition-colors"
             >
               <Phone size={16} className="mr-2" />
-              <span>+1 123 456 7890</span>
+              <span>+1 408 449 7257</span>
             </a>
           </div>
           

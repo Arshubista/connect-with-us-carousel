@@ -66,9 +66,9 @@ const TeamSection = () => {
       >
         <div className="text-center mb-12">
           {/* Updated "OUR TEAM" Text */}
-          <h2 className="inline-block px-3 py-1 bg-estate-blue/10 text-estate-blue rounded-full text-lg text-2xl md:text-2xl font-bold mb-3">
+          {/* <h2 className="inline-block px-3 py-1 bg-estate-blue/10 text-estate-blue rounded-full text-2xl md:text-2xl font-bold mb-3">
             OWNER
-          </h2>
+          </h2> */}
           <h3 className="text-5xl md:text-4xl font-bold text-estate-dark mb-4">Meet Our Leadership</h3>
           <p className="text-estate-muted max-w-2xl mx-auto">
             Guided by expertise and passion, our leadership team is committed to finding you the perfect property.
