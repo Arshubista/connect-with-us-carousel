@@ -117,25 +117,22 @@ const Hero = () => {
 
   return (
     <section 
-  className="relative h-[70vh] w-full overflow-hidden bg-cover bg-center bg-fixed"
-  style={{
-    backgroundImage: `url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2244&q=80')`,
-  }}
->
-
-
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/50" />
-  
+      className="relative h-[70vh] w-full overflow-hidden bg-cover bg-center bg-fixed"
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2244&q=80')`,
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30" />
       
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center" 
            onClick={() => setActiveDropdown(null)}>
         <div className="container mx-auto px-4 flex flex-col items-center">
           {/* Search Bar */}
-          <div className="bg-white rounded-lg lg:rounded-full shadow-lg w-full max-w-5xl mx-auto p-4" 
+          <div className="bg-white rounded-lg lg:rounded-full shadow-lg w-full max-w-7xl mx-auto p-3" 
                onClick={(e) => e.stopPropagation()}>
-            <div className="flex flex-col lg:flex-row items-center gap-4">
+            <div className="flex flex-col lg:flex-row items-center gap-2">
               {/* Location Input */}
               <div className="flex-1 w-full lg:w-auto flex items-center bg-gray-50 border border-gray-200 rounded-lg p-3">
                 <MapPin size={20} className="text-gray-500 mr-2" />
@@ -143,8 +140,8 @@ const Hero = () => {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Where are you looking for?"
-                  className="w-full bg-transparent outline-none text-sm text-gray-700"
+                  placeholder="Search free MLS listings..."
+                  className="w-full bg-transparent outline-none text-sm text-gray-700 placeholder-gray-500"
                   onClick={() => setActiveDropdown(null)}
                 />
               </div>
@@ -211,9 +208,9 @@ const Hero = () => {
               </div>
               
               {/* Search Button */}
-              <div className="w-full md:w-auto">
+              <div className="w-full lg:w-auto">
                 <button 
-                  className="w-full bg-black hover:bg-blue-700 text-white p-3 rounded-lg flex items-center justify-center transition-colors duration-300"
+                  className="w-full bg-black hover:bg-blue-700 text-white p-3 rounded-lg lg:rounded-full flex items-center justify-center transition-colors duration-300"
                   onClick={handleSearch}
                 >
                   <Search size={20} className="mr-2" />
