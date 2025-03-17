@@ -135,7 +135,7 @@ const LeadForm = () => {
             )}
           </button>
           
-          <p className="text-xs text-center text-estate-muted mt-4">
+          <p className="text-xs text-center text-white/50  mt-4">
             By submitting this form, you agree to our <a href="#" className="text-estate-blue hover:underline">Privacy Policy</a> and <a href="#" className="text-estate-blue hover:underline">Terms of Service</a>.
           </p>
         </form>

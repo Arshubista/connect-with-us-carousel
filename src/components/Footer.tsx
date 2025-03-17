@@ -16,13 +16,18 @@ const Footer = () => {
                 alt="Trigo Logo" 
                 className="h-10 w-auto" 
               />
-            </Link>f
+            </Link>
             <p className="text-white/70 leading-relaxed">
               We help you find the perfect property in prime locations across major cities. Your journey to the perfect home starts with us.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/70 hover:text-white transition-colors">
-                <Facebook size={20} />
+              <a
+                    href="https://fb.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-white transition-colors"
+                     >
+                   <Facebook size={20} />     
               </a>
               <a href="#" className="text-white/70 hover:text-white transition-colors">
                 <Instagram size={20} />
