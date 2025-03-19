@@ -1,6 +1,9 @@
-import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { ChevronRight } from 'lucide-react';
+
 
 const Property = () => {
   // Sample data for properties

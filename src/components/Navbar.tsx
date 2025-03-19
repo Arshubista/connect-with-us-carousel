@@ -114,7 +114,7 @@ const Navbar = ({isHomePage=false}:{isHomePage?:boolean}) => {
                 Team
               </Link>
               <Link 
-                to="/" 
+                to="/property" 
                 className="text-estate-dark font-medium hover:text-estate-blue transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
