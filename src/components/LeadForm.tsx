@@ -43,7 +43,7 @@ const LeadForm = () => {
     <div className="glass-card rounded-xl overflow-hidden shadow-xl">
       <div className="p-6 md:p-8">
         <h3 className="text-2xl font-bold text-estate-dark mb-2">Find Your Dream Property</h3>
-        <p className="text-estate-muted mb-6">Fill out the form below and our experts will contact you</p>
+        <p className="text-estate-blue mb-6">Fill out the form below and our experts will contact you</p>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
