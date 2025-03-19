@@ -60,7 +60,7 @@ const Navbar = ({isHomePage=false}:{isHomePage?:boolean}) => {
               Properties
             </Link>
             <Link 
-              to="/" 
+              to="/About" 
               className={`${isScrolled ? scrolledColor :nonScrolledColor} first-letter:font-medium hover:text-estate-blue transition-colors`}
             >
               About
@@ -121,14 +121,14 @@ const Navbar = ({isHomePage=false}:{isHomePage?:boolean}) => {
                 Properties
               </Link>
               <Link 
-                to="/" 
+                to="/about" 
                 className="text-estate-dark font-medium hover:text-estate-blue transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link 
-                to="/" 
+                to="/about" 
                 className="text-estate-dark font-medium hover:text-estate-blue transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >

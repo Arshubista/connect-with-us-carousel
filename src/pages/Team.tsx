@@ -75,7 +75,7 @@ const Team = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gray-50">
+      <section className="pt-24 pb-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center">
             <div className="mb-8">
