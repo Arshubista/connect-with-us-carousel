@@ -117,114 +117,113 @@ const Hero = () => {
 
   return (
     <section 
-  className="relative w-full min-h-screen sm:h-[90vh] overflow-hidden bg-cover bg-center"
+  className="relative w-full min-h-screen sm:h-[90vh] overflow-hidden bg-cover bg-center flex items-center"
   style={{
     backgroundImage: `url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2244&q=80')`,
-    backgroundSize: "cover", // Ensures full visibility
-    backgroundPosition: "center", // Centers the image
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   }}
 >
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/30" />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30" />
-      
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center" 
-           onClick={() => setActiveDropdown(null)}>
-        <div className="container mx-auto px-4 flex flex-col items-center">
-          {/* Search Bar */}
-          <div className="bg-white rounded-lg lg:rounded-full shadow-lg w-full max-w-7xl mx-auto p-3" 
-               onClick={(e) => e.stopPropagation()}>
-            <div className="flex flex-col lg:flex-row items-center gap-2">
-              {/* Location Input */}
-              <div className="flex-1 w-full lg:w-auto flex items-center bg-gray-50 border border-gray-200 rounded-lg p-3">
-                <MapPin size={20} className="text-gray-500 mr-2" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search free MLS listings..."
-                  className="w-full bg-transparent outline-none text-sm text-gray-700 placeholder-gray-500"
-                  onClick={() => setActiveDropdown(null)}
-                />
-              </div>
-              
-              {/* Property Type */}
-              <div className="flex-1 w-full lg:w-auto">
-                <Dropdown 
-                  label="Property Type" 
-                  options={PROPERTY_TYPES}
-                  minWidth="150px"
-                  onSelect={(val) => updateFilter('propertyType', val)}
-                  isOpenOverride={activeDropdown === 'propertyType'}
-                  onOpenChange={() => handleDropdownToggle('propertyType')}
-                />
-              </div>
-              
-              {/* Bedrooms */}
-              <div className="flex-1 w-full lg:w-auto">
-                <Dropdown 
-                  label="Bedrooms" 
-                  options={BEDROOM_OPTIONS}
-                  minWidth="120px"
-                  onSelect={(val) => updateFilter('bedrooms', val)}
-                  isOpenOverride={activeDropdown === 'bedrooms'}
-                  onOpenChange={() => handleDropdownToggle('bedrooms')}
-                />
-              </div>
-              
-              {/* Bathrooms */}
-              <div className="flex-1 w-full lg:w-auto">
-                <Dropdown 
-                  label="Bathrooms" 
-                  options={BATHROOM_OPTIONS}
-                  minWidth="120px"
-                  onSelect={(val) => updateFilter('bathrooms', val)}
-                  isOpenOverride={activeDropdown === 'bathrooms'}
-                  onOpenChange={() => handleDropdownToggle('bathrooms')}
-                />
-              </div>
-              
-              {/* Price Range */}
-              <div className="flex-1 w-full lg:w-auto flex items-center gap-2">
-                <Dropdown 
-                  label="$" 
-                  options={CURRENCY_OPTIONS}
-                  minWidth="80px"
-                  renderOption={(option) => (
-                    <div className="flex items-center">
-                      {option.symbol} <span className="ml-2 text-gray-500">{option.label}</span>
-                    </div>
-                  )}
-                  onSelect={(val) => updateFilter('currency', val.symbol)}
-                  isOpenOverride={activeDropdown === 'currency'}
-                  onOpenChange={() => handleDropdownToggle('currency')}
-                />
-                <Dropdown 
-                  label="Price" 
-                  options={PRICE_OPTIONS}
-                  minWidth="120px"
-                  onSelect={(val) => updateFilter('price', val)}
-                  isOpenOverride={activeDropdown === 'price'}
-                  onOpenChange={() => handleDropdownToggle('price')}
-                />
-              </div>
-              
-              {/* Search Button */}
-              <div className="w-full lg:w-auto">
-                <button 
-                  className="w-full bg-black hover:bg-blue-700 text-white p-3 rounded-lg lg:rounded-full flex items-center justify-center transition-colors duration-300"
-                  onClick={handleSearch}
-                >
-                  <Search size={20} className="mr-2" />
-                  <span className="text-sm">Search</span>
-                </button>
-              </div>
-            </div>
+  {/* Centered Content */}
+  <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+    <div className="container mx-auto px-4 flex flex-col items-center">
+      {/* Search Bar Container */}
+      <div className="bg-white rounded-lg lg:rounded-full shadow-lg w-full max-w-7xl mx-auto p-3">
+        <div className="flex flex-col lg:flex-row items-center gap-2">
+          
+          {/* Location Input */}
+          <div className="flex-1 w-full lg:w-auto flex items-center bg-gray-50 border border-gray-200 rounded-lg p-3">
+            <MapPin size={20} className="text-gray-500 mr-2" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search free MLS listings..."
+              className="w-full bg-transparent outline-none text-sm text-gray-700 placeholder-gray-500"
+            />
           </div>
+
+          {/* Property Type Dropdown */}
+          <div className="flex-1 w-full lg:w-auto">
+            <Dropdown 
+              label="Property Type" 
+              options={PROPERTY_TYPES}
+              minWidth="150px"
+              onSelect={(val) => updateFilter('propertyType', val)}
+              isOpenOverride={activeDropdown === 'propertyType'}
+              onOpenChange={() => handleDropdownToggle('propertyType')}
+            />
+          </div>
+
+          {/* Bedrooms Dropdown */}
+          <div className="flex-1 w-full lg:w-auto">
+            <Dropdown 
+              label="Bedrooms" 
+              options={BEDROOM_OPTIONS}
+              minWidth="120px"
+              onSelect={(val) => updateFilter('bedrooms', val)}
+              isOpenOverride={activeDropdown === 'bedrooms'}
+              onOpenChange={() => handleDropdownToggle('bedrooms')}
+            />
+          </div>
+
+          {/* Bathrooms Dropdown */}
+          <div className="flex-1 w-full lg:w-auto">
+            <Dropdown 
+              label="Bathrooms" 
+              options={BATHROOM_OPTIONS}
+              minWidth="120px"
+              onSelect={(val) => updateFilter('bathrooms', val)}
+              isOpenOverride={activeDropdown === 'bathrooms'}
+              onOpenChange={() => handleDropdownToggle('bathrooms')}
+            />
+          </div>
+
+          {/* Currency & Price Dropdown */}
+          <div className="flex-1 w-full lg:w-auto flex items-center gap-2">
+            <Dropdown 
+              label="$" 
+              options={CURRENCY_OPTIONS}
+              minWidth="80px"
+              renderOption={(option) => (
+                <div className="flex items-center">
+                  {option.symbol} <span className="ml-2 text-gray-500">{option.label}</span>
+                </div>
+              )}
+              onSelect={(val) => updateFilter('currency', val.symbol)}
+              isOpenOverride={activeDropdown === 'currency'}
+              onOpenChange={() => handleDropdownToggle('currency')}
+            />
+            <Dropdown 
+              label="Price" 
+              options={PRICE_OPTIONS}
+              minWidth="120px"
+              onSelect={(val) => updateFilter('price', val)}
+              isOpenOverride={activeDropdown === 'price'}
+              onOpenChange={() => handleDropdownToggle('price')}
+            />
+          </div>
+
+          {/* Search Button */}
+          <div className="w-full lg:w-auto">
+            <button 
+              className="w-full bg-black hover:bg-blue-700 text-white p-3 rounded-lg lg:rounded-full flex items-center justify-center transition-colors duration-300"
+              onClick={handleSearch}
+            >
+              <Search size={20} className="mr-2" />
+              <span className="text-sm">Search</span>
+            </button>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   );
 };
 
