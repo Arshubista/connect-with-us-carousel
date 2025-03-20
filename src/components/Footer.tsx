@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="space-y-6">
             <Link to="/" className="inline-block">
               <img 
-                src="/lovable-uploads/logo.png" 
+                src="/upload/logo.png" 
                 alt="Trigo Logo" 
                 className="h-10 w-auto" 
               />

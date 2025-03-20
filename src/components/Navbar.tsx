@@ -33,7 +33,7 @@ const Navbar = ({isHomePage=false}:{isHomePage?:boolean}) => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/logo.png" 
+              src="/upload/logo.png" 
               alt="Trigo Logo" 
               className="h-10 w-auto" 
             />
