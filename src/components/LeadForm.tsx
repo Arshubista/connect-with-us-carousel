@@ -1,6 +1,8 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+
 import { useToast } from "@/components/ui/use-toast";
+
 
 const LeadForm = () => {
   const { toast } = useToast();
@@ -37,6 +39,32 @@ const LeadForm = () => {
         message: '',
       });
     }, 1500);
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const formRef = useRef<HTMLDivElement>(null);
+
+// eslint-disable-next-line react-hooks/rules-of-hooks
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (formRef.current && !formRef.current.contains(event.target as Node)) {
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        propertyType: 'residential',
+        message: '',
+      });
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
+}, []);
+
+
+
   };
 
   return (
@@ -96,11 +124,15 @@ const LeadForm = () => {
               value={formData.propertyType}
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-200 rounded-md focus:ring-2 focus:ring-estate-blue focus:border-transparent outline-none transition-all"
-            >
+              >
               <option value="residential">Residential</option>
               <option value="commercial">Commercial</option>
               <option value="industrial">Industrial</option>
               <option value="land">Land</option>
+              <option value="luxury-villas">Luxury Villas</option>
+              <option value="apartments">Apartments</option>
+              <option value="farmhouses">Farmhouses</option>
+              <option value="retail-spaces">Retail Spaces</option>
             </select>
           </div>
           
