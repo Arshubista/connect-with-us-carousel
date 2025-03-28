@@ -117,7 +117,7 @@ const Hero = () => {
 
   return (
     <section 
-  className="relative w-full min-h-screen sm:h-[90vh] overflow-hidden bg-cover bg-center flex items-center"
+  className="relative w-full min-h-screen sm:h-[vh] overflow-hidden bg-cover bg-center flex items-center"
   style={{
     backgroundImage: `url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2244&q=80')`,
     backgroundSize: "cover",
