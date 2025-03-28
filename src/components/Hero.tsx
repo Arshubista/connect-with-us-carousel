@@ -128,8 +128,8 @@ const Hero = () => {
   <div className="absolute inset-0 bg-black/30" />
 
   {/* Centered Content */}
-  <div className="relative z-10 flex flex-col items-center justify-center w-full h-full landscape:mt-32">
-    <div className="container mx-auto px-4 flex flex-col items-center">
+  <div className="relative z-20 flex flex-col items-center justify-center w-full h-full landscape:mt-32">
+    <div className="container mx-auto px-2 flex flex-col items-center">
       {/* Search Bar Container */}
       <div className="bg-white rounded-lg lg:rounded-full shadow-lg w-full max-w-7xl mx-auto p-3">
         <div className="flex flex-col lg:flex-row items-center gap-2">
