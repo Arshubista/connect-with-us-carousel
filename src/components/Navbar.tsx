@@ -88,7 +88,7 @@ const Navbar = ({ isHomePage = false }: { isHomePage?: boolean }) => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white/30 backdrop-blur-lg border-t border-white/10 shadow-lg animate-fade-in"
+        <div className="md:hidden absolute top-full left-0 w-full bg-white/80 backdrop-blur-lg border-t border-white/5 shadow-lg animate-fade-in"
           style={{
             WebkitBackdropFilter: 'blur(12px)',
             backdropFilter: 'blur(12px)',
