@@ -17,52 +17,52 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: 'Maria Rodriguez',
+    name: 'Mario Rivera',
     role: 'Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2576&q=80',
+    image: '/public/upload/Mario Rivera.png',
     bio: 'Maria founded Trigo with a vision to transform the real estate experience. With over 15 years in luxury real estate, she has developed a reputation for her integrity, expertise, and personalized approach.',
     specialties: ['Luxury Properties', 'Commercial Real Estate', 'Investment Properties']
   },
   {
     id: 2,
-    name: 'Michael Chen',
+    name: 'Michael Rivera',
     role: 'Chief Operating Officer',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80',
+    image: '/public/upload/Michael Rivera.png',
     bio: 'Michael oversees daily operations at Trigo, ensuring excellence in every client interaction. His background in finance and real estate development brings valuable insights to our strategic planning.',
     specialties: ['Urban Development', 'Market Analysis', 'Property Valuation']
   },
   {
     id: 3,
-    name: 'Mario Rossi',
+    name: 'Maria Sandoval Rivera',
     role: 'Head of Sales',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80',
+    image: '/public/upload/Maria Sandoval Rivera.png',
     bio: 'Mario leads our sales team with passion and dedication. His extensive knowledge of property markets and negotiation skills has helped countless clients find their perfect properties at optimal prices.',
     specialties: ['Residential Sales', 'Client Relations', 'Negotiation']
   },
-  {
-    id: 4,
-    name: 'Alexandra Kim',
-    role: 'Marketing Director',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1761&q=80',
-    bio: 'Alexandra brings creativity and strategic thinking to our marketing efforts. Her innovative campaigns have significantly enhanced our brand visibility and client engagement.',
-    specialties: ['Digital Marketing', 'Brand Strategy', 'Content Creation']
-  },
-  {
-    id: 5,
-    name: 'David Thompson',
-    role: 'Senior Real Estate Agent',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
-    bio: 'David has an exceptional track record in matching clients with their ideal properties. His attention to detail and understanding of client needs make him a valuable asset to our team.',
-    specialties: ['Luxury Homes', 'Waterfront Properties', 'Client Matching']
-  },
-  {
-    id: 6,
-    name: 'Sophia Patel',
-    role: 'Client Relations Manager',
-    image: 'https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1789&q=80',
-    bio: 'Sophia ensures our clients receive the highest level of service throughout their real estate journey. Her warm personality and problem-solving abilities have earned her numerous client accolades.',
-    specialties: ['Customer Service', 'Process Optimization', 'Client Satisfaction']
-  }
+  // {
+  // //   id: 4,
+  //   name: 'Alexandra Kim',
+  //   role: 'Marketing Director',
+  //   image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1761&q=80',
+  //   bio: 'Alexandra brings creativity and strategic thinking to our marketing efforts. Her innovative campaigns have significantly enhanced our brand visibility and client engagement.',
+  //   specialties: ['Digital Marketing', 'Brand Strategy', 'Content Creation']
+  // },
+  // {
+  //   id: 5,
+  //   name: 'David Thompson',
+  //   role: 'Senior Real Estate Agent',
+  //   image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
+  //   bio: 'David has an exceptional track record in matching clients with their ideal properties. His attention to detail and understanding of client needs make him a valuable asset to our team.',
+  //   specialties: ['Luxury Homes', 'Waterfront Properties', 'Client Matching']
+  // },
+  // {
+  //   id: 6,
+  //   name: 'Sophia Patel',
+  //   role: 'Client Relations Manager',
+  //   image: 'https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1789&q=80',
+  //   bio: 'Sophia ensures our clients receive the highest level of service throughout their real estate journey. Her warm personality and problem-solving abilities have earned her numerous client accolades.',
+  // //   specialties: ['Customer Service', 'Process Optimization', 'Client Satisfaction']
+  // }
 ];
 
 const Team = () => {
