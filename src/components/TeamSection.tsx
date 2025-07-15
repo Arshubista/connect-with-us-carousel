@@ -14,19 +14,19 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: 'Mario Rivera',
     role: 'Founder & CEO',
-    image: '/public/upload/Mario Rivera.png',
+    image: '/upload/Mario Rivera.png',
   },
   {
     id: 2,
     name: 'Michael Rivera',
     role: 'COO',
-    image: '/public/upload/Michael Rivera.png',
+    image: '/upload/Michael Rivera.png',
   },
   {
     id: 3,
     name: 'Maria Sandoval Rivera',
     role: 'Head of Sales',
-    image: '/public/upload/Maria Sandoval Rivera.png',
+    image: '/upload/Maria Sandoval Rivera.png',
   }
 ];
 
@@ -89,11 +89,12 @@ const TeamSection = () => {
                   alt={member.name}
                   className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
                   onError={(e) => {
-                    // Fallback image if the original fails to load
-                    if (e.currentTarget.src !== 'https://via.placeholder.com/300') {
-                      e.currentTarget.src = 'https://via.placeholder.com/300';
-                    }
-                  }}
+                  // Fallback to a local placeholder if image fails
+                if (!e.currentTarget.src.endsWith('/placeholder-user.png')) {
+                e.currentTarget.src = '/upload/placeholder-user.png';
+  }
+}}
+                    
                   loading="lazy"
                   aria-label={`Image of ${member.name}`}
                 />
