@@ -19,7 +19,7 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: 'Mario Rivera',
     role: 'Founder & CEO',
-    image: '/public/upload/Mario Rivera.png',
+    image: '/upload/Mario Rivera.png',
     bio: 'Maria founded Trigo with a vision to transform the real estate experience. With over 15 years in luxury real estate, she has developed a reputation for her integrity, expertise, and personalized approach.',
     specialties: ['Luxury Properties', 'Commercial Real Estate', 'Investment Properties']
   },
@@ -27,7 +27,7 @@ const teamMembers: TeamMember[] = [
     id: 2,
     name: 'Michael Rivera',
     role: 'Chief Operating Officer',
-    image: '/public/upload/Michael Rivera.png',
+    image: '/upload/Michael Rivera.png',
     bio: 'Michael oversees daily operations at Trigo, ensuring excellence in every client interaction. His background in finance and real estate development brings valuable insights to our strategic planning.',
     specialties: ['Urban Development', 'Market Analysis', 'Property Valuation']
   },
@@ -35,7 +35,7 @@ const teamMembers: TeamMember[] = [
     id: 3,
     name: 'Maria Sandoval Rivera',
     role: 'Head of Sales',
-    image: '/public/upload/Maria Sandoval Rivera.png',
+    image: '/upload/Maria Sandoval Rivera.png',
     bio: 'Mario leads our sales team with passion and dedication. His extensive knowledge of property markets and negotiation skills has helped countless clients find their perfect properties at optimal prices.',
     specialties: ['Residential Sales', 'Client Relations', 'Negotiation']
   },
