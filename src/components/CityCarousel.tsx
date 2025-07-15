@@ -150,7 +150,7 @@ const CityCarousel = () => {
                           alt={city.name}
                           className="w-full h-full object-fill"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-10"></div>
                         <div className="absolute bottom-4 left-4 text-white">
                           <h3 className="text-lg md:text-xl font-bold">
                             {city.name}
