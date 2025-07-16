@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -100,11 +99,11 @@ const Team = () => {
                 key={member.id} 
                 className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl"
               >
-                <div className="relative h-80 overflow-hidden">
+                <div className="w-full aspect-square bg-gray-100 rounded-xl shadow-md flex items-center justify-center overflow-hidden">
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <div className="p-6">
