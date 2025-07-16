@@ -18,11 +18,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="inline-block">
-              <img
-                src="/upload/logo4.png"
-                alt="Trigo Logo"
-                className="h-12 w-auto"
-              />
+              <img src="/upload/logo4.png" alt="Logo" className="h-12 w-auto" />
             </Link>
             <p className="text-white/70 leading-relaxed">
               We help you find the perfect property in prime locations across
@@ -30,15 +26,17 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://fb.com"
-                target="_blank"
+                href="https://www.facebook.com/profile.php?id=61565531495133"
+                target="home"
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-white transition-colors"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/ignite.realestate?igsh=cmtwa3ZrdTYxZ3By"
+                target="home"
+                rel="noopener noreferrer"
                 className="text-white/70 hover:text-white transition-colors"
               >
                 <Instagram size={20} />
@@ -68,9 +66,9 @@ const Footer = () => {
                   size={18}
                 />
                 <span className="text-white/70">
-                  123 Real Estate Ave
+                  Ignite Real Estate & Associates
                   <br />
-                  New York, NY 10001
+                  2001 Howard Road #301, Madera, CA, United States, California
                 </span>
               </li>
               <li className="flex items-center">
@@ -79,16 +77,16 @@ const Footer = () => {
                   href="tel:+11234567890"
                   className="text-white/70 hover:text-white transition-colors"
                 >
-                  +1 (408) 449-7257
+                  +1 (559) 549-4093
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 text-estate-blue shrink-0" size={18} />
                 <a
-                  href="mailto:info@trigo.com"
+                  href="mailto:info@igniterea.com"
                   className="text-white/70 hover:text-white transition-colors"
                 >
-                  info@trigo.com
+                  info@igniterea.com
                 </a>
               </li>
             </ul>
@@ -116,7 +114,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="property"
                   className="text-white/70 hover:text-white transition-colors"
                 >
                   Properties
@@ -169,7 +167,7 @@ const Footer = () => {
             <div className="mt-6 pt-6 border-t border-white/10">
               <p className="text-white/70">Need urgent assistance?</p>
               <a
-                href="tel:+11234567890"
+                href="tel:+1 559-974-0552"
                 className="font-medium text-estate-blue hover:text-blue-400 transition-colors"
               >
                 Call our 24/7 hotline
@@ -180,7 +178,8 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
           <p className="text-white/50 text-sm">
-            © {new Date().getFullYear()} Trigo Real Estate. All rights reserved.
+            © {new Date().getFullYear()} Ignite Real Estate & Associates. All
+            rights reserved.
           </p>
         </div>
       </div>
