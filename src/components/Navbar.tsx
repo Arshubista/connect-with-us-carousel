@@ -35,7 +35,7 @@ const Navbar = ({isHomePage=false}:{isHomePage?:boolean}) => {
             <img 
               src="/upload/logo.png" 
               alt="Trigo Logo" 
-              className="h-10 w-auto" 
+              className="h-11 w-auto" 
             />
           </Link>
           
