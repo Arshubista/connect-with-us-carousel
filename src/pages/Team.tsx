@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ChevronRight } from "lucide-react";
@@ -17,9 +17,9 @@ const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: "Mario Rivera",
-    role: "Founder & CEO",
+    role: "Chief Executive Officer and Managing Branch Broker",
     image: "/upload/Mario Rivera.png",
-    bio: "Maria founded Trigo with a vision to transform the real estate experience. With over 15 years in luxury real estate, she has developed a reputation for her integrity, expertise, and personalized approach.",
+    bio: "Mario's real estate journey began over a decade ago, driven by a strong work ethic and a deep commitment to excellence. As the founder and co-owner of Ignite Real Estate & Associates and the Madera Real Branch, he has successfully built and led a high-performing team by equipping them with the tools, knowledge, and strategies needed to thrive in today’s market. Known for his sharp negotiation skills, Mario consistently delivers exceptional results for his clients, advocating fiercely on their behalf to ensure smooth and successful transactions. His in-depth understanding of the California Central Valley region, paired with his extensive industry experience, gives his clients a distinct advantage whether they are buying or selling. Outside of real estate, Mario is passionate about giving back—he generously volunteers his time to local community organizations, reflecting his genuine dedication to the people and neighborhoods he serves.",
     specialties: [
       "Luxury Properties",
       "Commercial Real Estate",
@@ -29,46 +29,71 @@ const teamMembers: TeamMember[] = [
   {
     id: 2,
     name: "Michael Rivera",
-    role: "Chief Operating Officer",
+    role: "Operational Manager",
     image: "/upload/Michael Rivera.png",
-    bio: "Michael oversees daily operations at Trigo, ensuring excellence in every client interaction. His background in finance and real estate development brings valuable insights to our strategic planning.",
+    bio: "Michael is passionate about staying informed and sharing knowledge, ensuring that both clients and agents feel confident and well-supported throughout the entire process. When not working directly with clients, he operates behind the scenes—managing compliance, coordinating transactions, and handling the details that keep everything running smoothly. With a commitment to both service and efficiency, he plays a vital role in creating a seamless real estate experience.",
     specialties: ["Urban Development", "Market Analysis", "Property Valuation"],
   },
   {
     id: 3,
     name: "Maria Sandoval Rivera",
-    role: "Head of Sales",
+    role: "Business Development Broker",
     image: "/upload/Maria Sandoval Rivera.png",
-    bio: "Mario leads our sales team with passion and dedication. His extensive knowledge of property markets and negotiation skills has helped countless clients find their perfect properties at optimal prices.",
+    bio: `With over 20 years of experience, she is a trusted Real Estate Broker known for her precision, professionalism, and commitment to results. She expertly represents buyers and sellers in Luxury, Residential, Probate, Divorce, Foreclosures, Commercial, Agricultural, and Distressed Property transactions, delivering excellence at every stage.
+Maria is especially recognized for her work in the luxury real estate sector, where her attention to detail, discretion, and elevated service make her a standout. Her strong background in contract negotiation and compliance ensures that every transaction is executed with clarity and legal precision.
+As a respected contract auditor, trainer, and industry mentor, Maria has guided countless professionals in achieving their goals through education, accountability, and excellence. Her leadership continues to shape a higher standard in real estate.
+From luxury estates to complex probate and foreclosure cases, Maria brings expertise and integrity, earning the trust of both her clients and peers.`,
     specialties: ["Residential Sales", "Client Relations", "Negotiation"],
   },
-  // {
-  // //   id: 4,
-  //   name: 'Alexandra Kim',
-  //   role: 'Marketing Director',
-  //   image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1761&q=80',
-  //   bio: 'Alexandra brings creativity and strategic thinking to our marketing efforts. Her innovative campaigns have significantly enhanced our brand visibility and client engagement.',
-  //   specialties: ['Digital Marketing', 'Brand Strategy', 'Content Creation']
-  // },
-  // {
-  //   id: 5,
-  //   name: 'David Thompson',
-  //   role: 'Senior Real Estate Agent',
-  //   image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
-  //   bio: 'David has an exceptional track record in matching clients with their ideal properties. His attention to detail and understanding of client needs make him a valuable asset to our team.',
-  //   specialties: ['Luxury Homes', 'Waterfront Properties', 'Client Matching']
-  // },
-  // {
-  //   id: 6,
-  //   name: 'Sophia Patel',
-  //   role: 'Client Relations Manager',
-  //   image: 'https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1789&q=80',
-  //   bio: 'Sophia ensures our clients receive the highest level of service throughout their real estate journey. Her warm personality and problem-solving abilities have earned her numerous client accolades.',
-  // //   specialties: ['Customer Service', 'Process Optimization', 'Client Satisfaction']
-  // }
+  {
+    id: 4,
+    name: "Jazette Drew",
+    role: "Realtor",
+    image: "/upload/james-carter.png",
+    bio: "A dedicated realtor who makes real estate personal. She shows up for the big moments in her clients’ lives—just as she does when planning proposals or celebrating milestones with those she loves. With a background in procurement and design, Jazette brings strategy, creativity, and heart to every step of the journey. For her, it's never just another transaction—it’s your life, your home, and she’s committed to making sure it feels right from beginning to end. It’s an honor she doesn’t take lightly.",
+    specialties: ["Commercial Sales", "Market Analysis", "Negotiation"],
+  },
+  {
+    id: 5,
+    name: "Branden Perdomo",
+    role: "Realtor",
+    image: "/upload/linda-nguyen.png",
+    bio: "A trusted real estate professional serving California’s Central Valley, with a specialty in investment properties, commercial real estate, and first-time homebuyers. With deep expertise in the Fresno and Madera County markets, he offers tailored guidance backed by local insight and a client-first approach. Whether you’re expanding your portfolio or purchasing your very first home, he is committed to making the process smooth, strategic, and successful. Always professional, always proactive—and always just a call or text away.",
+    specialties: [
+      "Client Relations",
+      "Transaction Management",
+      "Communication",
+    ],
+  },
+  {
+    id: 6,
+    name: "Celia Herrera",
+    role: "Realtor",
+    image: "/upload/carlos-ramirez.png",
+    bio: "A skilled negotiator and trusted leader who thrives on finding solutions and getting things done. As a Central Valley market expert, Celia buyers make confident decisions backed by data, strategy, and personalized service. With a deep understanding of numbers, investments, and long-term value, she guides clients not only to buy a home but also to build generational wealth. Whether you're just starting or looking to grow, Celia is here to make your real estate journey a smart and successful one.",
+    specialties: ["Foreclosures", "Probate", "Legal Compliance"],
+  },
+  {
+    id: 7,
+    name: "Travis Diarte",
+    role: "Realtor",
+    image: "/upload/priya-patel.png",
+    bio: "A licensed real estate agent known for fiercely advocating on behalf of his clients and handling every transaction with care and determination. He understands that buying or selling a home is one of life’s most significant decisions, and he treats each experience with the respect it deserves. Clients trust Travis for his responsiveness, honesty, and persistence throughout the entire process. Committed to continuous growth, he stays educated and informed about the ever-changing market. For Travis, real estate isn’t just a job—it’s a passion and a promise to serve with integrity.",
+    specialties: ["Marketing", "Brand Strategy", "Digital Campaigns"],
+  },
+  {
+    id: 8,
+    name: "Lucy Siong",
+    role: "Marketing Director",
+    image: "/upload/ethan-lee.png",
+    bio: "Lucy holds a BA in Public Relations & Advertising and a Master's in Marketing. With experience in real estate and construction, she enhances the company's market presence by developing and implementing strategic marketing plans, managing advertising campaigns, and promoting the brokerage's brand identity.",
+    specialties: ["Data Analysis", "Technology", "Market Insights"],
+  },
 ];
 
 const Team = () => {
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -122,7 +147,31 @@ const Team = () => {
                     {member.name}
                   </h3>
                   <p className="text-estate-blue mb-4">{member.role}</p>
-                  <p className="text-estate-muted mb-4">{member.bio}</p>
+                  <div className="text-sm text-gray-700 mb-2">
+                    {expandedId === member.id || member.bio.length < 180 ? (
+                      <>
+                        {member.bio}
+                        {member.bio.length > 180 && (
+                          <button
+                            className="text-blue-600 ml-2 underline"
+                            onClick={() => setExpandedId(null)}
+                          >
+                            Show less
+                          </button>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {member.bio.slice(0, 180)}...
+                        <button
+                          className="text-blue-600 ml-2 underline"
+                          onClick={() => setExpandedId(member.id)}
+                        >
+                          Read more
+                        </button>
+                      </>
+                    )}
+                  </div>
 
                   <div>
                     <h4 className="font-medium text-estate-dark mb-2">
