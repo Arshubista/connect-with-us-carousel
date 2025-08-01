@@ -102,12 +102,16 @@ const SecondaryLeadForm = () => {
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-estate-blue focus:border-transparent outline-none transition-all text-white"
                 >
                   <option value="" disabled>Select a city</option>
-                  <option value="new-york">New York</option>
-                  <option value="chicago">Chicago</option>
-                  <option value="orlando">Orlando</option>
-                  <option value="seattle">Seattle</option>
-                  <option value="sarasota">Sarasota</option>
-                  <option value="miami">Miami</option>
+                  <option value="clovis">Clovis</option>
+                  <option value="medera">Medera</option>
+                  <option value="fresno">Fresno</option>
+                  <option value="chowchila">Chowchila</option>
+                  <option value="coarsgold">Coarsgold</option>
+                  <option value="oakhrust">Oakhrust</option>
+                  <option value="kerman">Karman</option>
+                  <option value="sanger">Sanger</option>
+                  <option value="visalia">Visalia</option>
+
                 </select>
               </div>
             </div>
