@@ -13,19 +13,19 @@ const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: 'Mario Rivera',
-    role: 'Founder & CEO',
+    role: 'Chief Executive Officer and Managing Branch Broker',
     image: '/upload/Mario Rivera.png',
   },
   {
     id: 2,
     name: 'Michael Rivera',
-    role: 'COO',
+    role: 'Operational Manager',
     image: '/upload/Michael Rivera.png',
   },
   {
     id: 3,
     name: 'Maria Sandoval Rivera',
-    role: 'Head of Sales',
+    role: 'Business Development Broker',
     image: '/upload/Maria Sandoval Rivera.png',
   }
 ];
