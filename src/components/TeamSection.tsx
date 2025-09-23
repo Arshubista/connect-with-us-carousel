@@ -143,7 +143,7 @@ const TeamSection = () => {
                 </h4>
                 <p className="text-estate-muted mb-4">{member.role}</p>
                 <Link
-                  to="/team"
+                  to={`/team/${member.id}`}
                   className="inline-flex items-center justify-center px-4 py-2 bg-estate-blue text-white rounded-full hover:bg-estate-darkblue transition-colors"
                 >
                   Get to Know Me <ChevronRight size={16} className="ml-1" />
