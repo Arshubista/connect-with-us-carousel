@@ -167,7 +167,7 @@ const Footer = () => {
             <div className="mt-6 pt-6 border-t border-white/10">
               <p className="text-white/70">Need urgent assistance?</p>
               <a
-                href="tel:+1 559-974-0552"
+                href="tel:+1 559-780-7325"
                 className="font-medium text-estate-blue hover:text-blue-400 transition-colors"
               >
                 Call our 24/7 hotline

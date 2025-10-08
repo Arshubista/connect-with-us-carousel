@@ -80,7 +80,7 @@ const Navbar = ({isHomePage=false}:{isHomePage?:boolean}) => {
               className="flex items-center bg-estate-blue text-white px-4 py-2 rounded hover:bg-estate-darkblue transition-colors"
             >
               <Phone size={16} className="mr-2" />
-              <span>+1 559 549 4093</span>
+              <span>+1 559 780 7325</span>
             </a>
           </div>
           
@@ -139,7 +139,7 @@ const Navbar = ({isHomePage=false}:{isHomePage?:boolean}) => {
                 className="flex items-center bg-estate-blue text-white px-4 py-2 rounded hover:bg-estate-darkblue transition-colors w-fit"
               >
                 <Phone size={16} className="mr-2" />
-                <span>+1 559 549 4093</span>
+                <span>+1 559 780 7325</span>
               </a>
             </nav>
           </div>
