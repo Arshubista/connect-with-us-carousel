@@ -184,6 +184,13 @@ const Hero = () => {
             className="hero-container"
             style={{ textAlign: "center", padding: "3rem 1rem" }}
           >
+            {/* Logo above the title */}
+            <img
+              src="/upload/logo4.png"
+              alt="Ignite Real Estate Logo"
+              className="mx-auto mb-6 w-96 h-auto"
+              style={{ maxWidth: "1000px" }}
+            />
             <h1 className="hero-title">IGNITE REAL ESTATE & ASSOCIATES</h1>
             {/* Optional: Add your hero image here if needed */}
             <div className="above-search-content" style={{ margin: "2rem 0" }}>
