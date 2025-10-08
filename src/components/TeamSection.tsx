@@ -59,35 +59,21 @@ const TeamSection = () => {
   }, []); // Empty dependency array ensures this effect runs only once
 
   return (
-    <section className="bg-white py-12">
-      <div className="container mx-auto flex flex-col md:flex-row items-center gap-10">
-        {/* Text on the left */}
-        <div className="w-full md:w-1/2 md:pr-10">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900">
-            Meet Our Team
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Our dedicated team combines years of experience and a passion for
-            real estate. We work together to help you find the perfect property
-            and provide exceptional service every step of the way.
-          </p>
-          <div className="mt-6">
-            <Link
-              to="/team"
-              className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow hover:bg-blue-700 transition"
-            >
-              Meet Us
-            </Link>
-          </div>
-        </div>
-        {/* Image on the right */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <img
-            src="/upload/team pic.png"
-            alt="team"
-            className="rounded-xl shadow-lg max-w-xs md:max-w-sm w-full"
-          />
-        </div>
+    <section className="bg-white py-0">
+      <div className="w-full flex items-center justify-center min-h-[40vh] md:min-h-[60vh] lg:min-h-[80vh] p-0 m-0">
+        <img
+          src="/upload/team pic.png"
+          alt="Our Team"
+          className="w-full h-[40vh] md:h-[60vh] lg:h-[80vh] object-cover"
+          style={{
+            objectFit: "cover",
+            width: "100vw",
+            height: "100%",
+            display: "block",
+            borderRadius: "1.5rem",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+          }}
+        />
       </div>
 
       <div
@@ -97,10 +83,6 @@ const TeamSection = () => {
         }`}
       >
         <div className="text-center mb-12">
-          {/* Updated "OUR TEAM" Text */}
-          {/* <h2 className="inline-block px-3 py-1 bg-estate-blue/10 text-estate-blue rounded-full text-2xl md:text-2xl font-bold mb-3">
-            OWNER
-          </h2> */}
           <h3 className="text-5xl md:text-4xl font-bold text-estate-dark mb-4">
             Meet Our Leadership
           </h3>
