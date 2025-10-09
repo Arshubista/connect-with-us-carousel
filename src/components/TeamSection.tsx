@@ -60,15 +60,12 @@ const TeamSection = () => {
 
   return (
     <section className="bg-white py-0">
-      <div className="w-full flex items-center justify-center min-h-[40vh] md:min-h-[60vh] lg:min-h-[80vh] p-0 m-0">
+      <div className="w-full flex items-center justify-center min-h-[50vh] p-0 m-0">
         <img
           src="/upload/team pic.png"
           alt="Our Team"
-          className="w-full h-[40vh] md:h-[60vh] lg:h-[80vh] object-cover"
+          className="w-full max-w-screen-3xl h-[50vh] object-fill mx-auto"
           style={{
-            objectFit: "cover",
-            width: "100vw",
-            height: "100%",
             display: "block",
             borderRadius: "1.5rem",
             boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
